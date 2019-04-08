@@ -16,8 +16,8 @@ public class EmoStateLogger implements Runnable {
 		
 		
 		while (true){
-				e.run();
-				Edk.INSTANCE.IEE_EngineDisconnect();
+			e.run();
+			Edk.INSTANCE.IEE_EngineDisconnect();
 		}
 		
 	}
