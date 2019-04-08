@@ -10,7 +10,7 @@ import com.sun.jna.ptr.*;
 
 public class EmoStateLogger implements Runnable {
 	boolean waitingForStop = false;
-	int testCount = 1;
+
 	public static void main(String[] args) throws InterruptedException {
 		EmoStateLogger e = new EmoStateLogger();
 		
