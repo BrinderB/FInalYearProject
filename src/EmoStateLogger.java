@@ -8,12 +8,6 @@ import com.sun.jna.ptr.*;
 
 /** Simple example of JNA interface mapping and usage. */
 
-//place class in thread 
-//put engine connect stuff in main 
-//put waits in if statements
-//if statements need to be turned back into obvious ones, upper face, lower face,
-//blink then while eyes open 
-
 public class EmoStateLogger implements Runnable {
 	boolean waitingForStop = false;
 	int testCount = 1;
@@ -84,6 +78,7 @@ public class EmoStateLogger implements Runnable {
 				if (eventType == Edk.IEE_Event_t.IEE_EmoStateUpdated.ToInt()) {
 
 					Edk.INSTANCE.IEE_EmoEngineEventGetEmoState(eEvent, eState);
+
 					try{
 
 					if (EmoState.INSTANCE.IS_FacialExpressionGetLowerFaceActionPower(eState) > 0.5 && !waitingForStop){
@@ -94,6 +89,7 @@ public class EmoStateLogger implements Runnable {
 						
 						
 					}
+
 					if (EmoState.INSTANCE.IS_FacialExpressionGetUpperFaceActionPower(eState) == 1 && !waitingForStop){
 							robot.keyPress(KeyEvent.VK_1);
 							robot.keyPress(KeyEvent.VK_ENTER);
