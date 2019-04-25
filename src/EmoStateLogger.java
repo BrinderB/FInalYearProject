@@ -6,7 +6,6 @@ import com.emotiv.Iedk.*;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.*;
 
-/** Simple example of JNA interface mapping and usage. */
 
 public class EmoStateLogger implements Runnable {
 	boolean waitingForStop = false;
